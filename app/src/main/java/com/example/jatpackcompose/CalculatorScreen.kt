@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -80,16 +81,21 @@ fun Calculadora(){
         verticalArrangement = Arrangement.Center
     )
         {
-            Row(
-                horizontalArrangement = Arrangement.SpaceEvenly
-            ) {
-                Button(onClick = { numDigitado("1") }) { Text("1") }
-                Button(onClick = { numDigitado("2") }) { Text("2") }
-                Button(onClick = { numDigitado("3") }) { Text("3") }
-                Button(onClick = { opNumber("+") }) { Text("+") }
-            }
 
             Row(
+                modifier = Modifier.fillMaxWidth()
+                    .background(Color.Blue),
+                horizontalArrangement = Arrangement.SpaceEvenly
+            ) {
+                 Button(onClick = { numDigitado("1") }) { Text("1") }
+                 Button(onClick = { numDigitado("2") }) { Text("2") }
+                 Button(onClick = { numDigitado("3") }) { Text("3") }
+                 Button(onClick = { opNumber("+") }) { Text("+") }
+             }
+
+            Row(
+                modifier = Modifier.fillMaxWidth()
+                    .background(Color.Blue),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 Button(onClick = { numDigitado("4") }) { Text("4") }
@@ -100,6 +106,8 @@ fun Calculadora(){
 
 
             Row(
+                modifier = Modifier.fillMaxWidth()
+                    .background(Color.Blue),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 Button(onClick = { numDigitado("7") }) { Text("7") }
@@ -108,6 +116,8 @@ fun Calculadora(){
                 Button(onClick = { opNumber("*") }) { Text("*") }
             }
             Row(
+                modifier = Modifier.fillMaxWidth()
+                    .background(Color.Blue),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
                 Button(onClick = { limpar() }) { Text("C") }
@@ -122,6 +132,7 @@ fun Calculadora(){
     }
 
 }
+
 
 @Preview(showBackground = true)
 @Composable
